@@ -1,0 +1,375 @@
+<!DOCTYPE html> 
+<html lang="tr">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTÜ Genç TEMA</title>
+    <style>
+        
+        :root {
+            --primary-green: #2e7d32;
+            --light-green: #a5d6a7;
+            --bg-color: #f1f8e9; 
+            --text-color: #333;
+            --accent-brown: #795548; 
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        
+        header {
+            background-color: var(--primary-green);
+            color: white;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .logo-container img {
+            height: 90px;
+            object-fit: contain;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        header p {
+            margin: 5px 0 0 0;
+            font-style: italic;
+            color: var(--light-green);
+        }
+
+        
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .leaf-icon {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-green);
+        }
+
+        
+        .origami-selector {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .origami-selector button {
+            background-color: white;
+            border: 2px solid var(--primary-green);
+            color: var(--primary-green);
+            padding: 12px 25px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .origami-selector button:hover {
+            background-color: var(--light-green);
+            color: var(--primary-green);
+            border-color: var(--light-green);
+        }
+
+        .origami-selector button.active {
+            background-color: var(--primary-green);
+            color: white;
+        }
+
+    
+        .origami-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            display: none; 
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .origami-card.active {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .origami-card h2 {
+            color: var(--primary-green);
+            margin-top: 0;
+            border-bottom: 2px dashed var(--light-green);
+            padding-bottom: 10px;
+            width: 100%;
+            text-align: center;
+        }
+
+        
+        .origami-image-placeholder {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            background-color: #e8f5e9;
+            border: 3px dashed var(--light-green);
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .origami-image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .placeholder-text {
+            position: absolute;
+            color: var(--primary-green);
+            font-weight: bold;
+            opacity: 0.6;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* FCK */
+        .steps {
+            width: 100%;
+        }
+
+        .steps h3 {
+            color: var(--accent-brown);
+        }
+
+        .steps ol {
+            padding-left: 20px;
+        }
+
+        .steps li {
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+
+    
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--primary-green);
+            font-weight: bold;
+            margin-top: 2rem;
+            background-color: white;
+            border-top: 4px solid var(--primary-green);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        a.btn-link {
+    display: inline-block; 
+    text-decoration: none; 
+    background-color: white;
+    border: 2px solid var(--primary-green);
+    color: var(--primary-green);
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+
+a.btn-link:hover {
+    background-color: var(--light-green);
+    color: var(--primary-green);
+    border-color: var(--light-green);
+}
+        
+.yan-yana-baslik {
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    gap: 15px; 
+    margin: 0;
+    font-size: 20px;
+}
+
+
+.kucuk-logo {
+    height: 50px; 
+    object-fit: contain;
+}
+        
+    </style>
+</head>
+<body>
+
+    <header>
+        
+            <!-- FCK -->
+            
+    
+        
+           <div class="logo-container"> </div>
+           <div> <h6 class="yan-yana-baslik">
+               <img class="kucuk-logo" src="https://i.ibb.co/v4Wq2MmC/genctemalogo.png" alt="TEMA Vakfı Logosu">
+               GTÜ Genç TEMA Tanışma Toplantısı</h6>
+            <p>.......</p>
+            <a class="btn-link" href=""><i class="bi bi-whatsapp"></i> WhatsApp Grubu</a>
+               <a class="btn-link" href=""><i class="bi bi-instagram"></i> Instagram</a>
+               <a class="btn-link" href=""><i class="bi bi-ui-checks"></i> Üyelik Formu</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="leaf-icon">..</div>
+
+        <div class="origami-selector">
+            <button class="tab-btn active" onclick="showOrigami('turna')">Deneme</button>
+            <button class="tab-btn" onclick="showOrigami('kelebek')">Deneme</button>
+            <button class="tab-btn" onclick="showOrigami('kurbaga')">Kurbağa</button>
+            </div>
+
+        <div id="turna" class="origami-card active">
+            <h2>Deneme</h2>
+            
+            <div class="origami-image-placeholder">
+                <div class="placeholder-text">Görsel</div>
+                <img src="" alt="" onerror="this.style.display='none'">
+            </div>
+
+            <div class="steps">
+                <h3>Nasıl Yapılır</h3>
+                <ol>
+                    <li>fkfkfkg</li>
+                </ol>
+            </div>
+        </div>
+
+        <div id="kelebek" class="origami-card">
+            <h2>Deneme</h2>
+            
+            <div class="origami-image-placeholder">
+                <div class="placeholder-text">görsel</div>
+                <img src="" alt="" onerror="this.style.display='none'">
+            </div>
+
+            <div class="steps">
+                <h3>deneme</h3>
+                <ol>
+                    <li>deneme</li>
+                </ol>
+            </div>
+        </div>
+
+        <div id="kurbaga" class="origami-card">
+            <h2>Zıplayan Kurbağa Yapımı</h2>
+            
+            <div class="origami-image-placeholder">
+                <img src="https://origami.me/wp-content/uploads/2017/05/Traditional-Origami-Jumping-Frog-1.gif" alt="" onerror="this.style.display='none'">
+            </div>
+            
+
+            <div class="steps origami-image-placeholder">
+                <div style="display: flex; gap: 10px; justify-content: center;">
+                <img style="max-height: 250px; max-width: 45%; object-fit: contain;" src="https://origami.me/wp-content/uploads/2026/02/origami-frog-paper-fold-step-1.jpg" alt="" onerror="this.style.display='none'">
+                <img style="max-height: 250px; max-width: 45%; object-fit: contain;" src="https://origami.me/wp-content/uploads/2026/02/origami-frog-diagram-step-1.png" alt="" onerror="this.style.display='none'">
+                </div>
+                <h3 style="text-align: center;">Adım 1: Kağıdı yatay olarak ikiye katlayın, sonra açın.</h3>
+            </div>
+          <div class="steps origami-image-placeholder">
+                <div style="display: flex; gap: 10px; justify-content: center;">
+                <img style="max-height: 250px; max-width: 45%; object-fit: contain;" src="https://origami.me/wp-content/uploads/2026/02/origami-frog-paper-fold-step-1.jpg" alt="" onerror="this.style.display='none'">
+                <img style="max-height: 250px; max-width: 45%; object-fit: contain;" src="https://origami.me/wp-content/uploads/2026/02/origami-frog-diagram-step-1.png" alt="" onerror="this.style.display='none'">
+                </div>
+                <h3 style="text-align: center;">Adım 1: Kağıdı yatay olarak ikiye katlayın, sonra açın.</h3>
+          </div>
+          <div class="steps origami-image-placeholder">
+                <div style="display: flex; gap: 10px; justify-content: center;">
+                <img style="max-height: 250px; max-width: 45%; object-fit: contain;" src="https://origami.me/wp-content/uploads/2026/02/origami-frog-paper-fold-step-1.jpg" alt="" onerror="this.style.display='none'">
+                <img style="max-height: 250px; max-width: 45%; object-fit: contain;" src="https://origami.me/wp-content/uploads/2026/02/origami-frog-diagram-step-1.png" alt="" onerror="this.style.display='none'">
+                </div>
+                <h3 style="text-align: center;">Adım 1: Kağıdı yatay olarak ikiye katlayın, sonra açın.</h3>
+          </div>
+          <div class="steps origami-image-placeholder">
+                <div style="display: flex; gap: 10px; justify-content: center;">
+                <img style="max-height: 250px; max-width: 45%; object-fit: contain;" src="https://origami.me/wp-content/uploads/2026/02/origami-frog-paper-fold-step-1.jpg" alt="" onerror="this.style.display='none'">
+                <img style="max-height: 250px; max-width: 45%; object-fit: contain;" src="https://origami.me/wp-content/uploads/2026/02/origami-frog-diagram-step-1.png" alt="" onerror="this.style.display='none'">
+                </div>
+                <h3 style="text-align: center;">Adım 1: Kağıdı yatay olarak ikiye katlayın, sonra açın.</h3>
+          </div>
+          <div class="steps origami-image-placeholder">
+                <div style="display: flex; gap: 10px; justify-content: center;">
+                <img style="max-height: 250px; max-width: 45%; object-fit: contain;" src="https://origami.me/wp-content/uploads/2026/02/origami-frog-paper-fold-step-1.jpg" alt="" onerror="this.style.display='none'">
+                <img style="max-height: 250px; max-width: 45%; object-fit: contain;" src="https://origami.me/wp-content/uploads/2026/02/origami-frog-diagram-step-1.png" alt="" onerror="this.style.display='none'">
+                </div>
+                <h3 style="text-align: center;">Adım 1: Kağıdı yatay olarak ikiye katlayın, sonra açın.</h3>
+          </div>
+          <div class="steps origami-image-placeholder">
+                <div style="display: flex; gap: 10px; justify-content: center;">
+                <img style="max-height: 250px; max-width: 45%; object-fit: contain;" src="https://origami.me/wp-content/uploads/2026/02/origami-frog-paper-fold-step-1.jpg" alt="" onerror="this.style.display='none'">
+                <img style="max-height: 250px; max-width: 45%; object-fit: contain;" src="https://origami.me/wp-content/uploads/2026/02/origami-frog-diagram-step-1.png" alt="" onerror="this.style.display='none'">
+                </div>
+                <h3 style="text-align: center;">Adım 1: Kağıdı yatay olarak ikiye katlayın, sonra açın.</h3>
+          </div>
+          
+
+
+
+          
+        </div>
+
+    </div>
+
+    <footer>
+        GTÜ Genç TEMA
+    </footer>
+
+    <script>
+        function showOrigami(id) {
+            const cards = document.querySelectorAll('.origami-card');
+            cards.forEach(card => card.classList.remove('active'));
+
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById(id).classList.add('active');
+
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+          </html>
+
+              

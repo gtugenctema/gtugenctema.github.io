@@ -230,7 +230,29 @@ a.btn-link:hover {
     height: 50px; 
     object-fit: contain;
 }
-        
+        @keyframes dikkatCekiciPulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(46, 125, 50, 0.7);
+    }
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 15px rgba(46, 125, 50, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(46, 125, 50, 0);
+    }
+}
+
+
+.ozel {
+    animation: dikkatCekiciPulse 2s infinite;
+}
+
+.ozel:hover {
+    animation: none; 
+}
     </style>
 </head>
 <body>
@@ -246,9 +268,10 @@ a.btn-link:hover {
                <img class="kucuk-logo" src="https://i.ibb.co/v4Wq2MmC/genctemalogo.png" alt="TEMA Vakfı Logosu">
                GTÜ Genç TEMA Tanışma Toplantısı</h6>
             <p>.......</p>
-            <a class="btn-link" href=""><i class="bi bi-whatsapp"></i> WhatsApp Grubu</a>
-               <a class="btn-link" href=""><i class="bi bi-instagram"></i> Instagram</a>
-               <a class="btn-link" href=""><i class="bi bi-ui-checks"></i> Üyelik Formu</a>
+            <a class="btn-link" href="https://chat.whatsapp.com/EgpvhzodioZ6UYJMx6exbI?mode=gi_t"><i class="bi bi-whatsapp"></i> WhatsApp Grubu</a>
+               <a class="btn-link" href="https://instagram.com/gtugenctema"><i class="bi bi-instagram"></i> Instagram</a>
+               <a class="btn-link" href="https://docs.google.com/forms/u/0/d/14ksSf2p_EucPQgiIN_uk4bDJW_e-2zXIWYcEX4VuuDc/viewform?edit_requested=true"><i class="bi bi-ui-checks"></i> Aktif Üye Formu</a>
+               <a class="btn-link ozel" href="https://www.instagram.com/p/DeJsXjkDiWO/?stkn=eHp3NWR2b2Z6eGVt"><i class="bi bi-tree"></i> Nasıl TEMA Vakfı Gönüllüsü Olurum?</a>
         </div>
     </header>
 
@@ -346,7 +369,7 @@ a.btn-link:hover {
             <div class="steps origami-image-placeholder">
               <div style="display: flex; justify-content: center; width: 100%;">
         <video controls style="max-height: 250px; max-width: 100%; object-fit: contain;">
-            <source src="https://videos.files.wordpress.com/3vMnhDH5/origami-frog-paper-fold-step-5_mp4_hd.mp4" type="video/mp4">
+            <source src="https://videos.files.wordpress.com/PDH3hrz8/origami-frog-paper-fold-step-5.mp4" type="video/mp4">
             Tarayıcınız video etiketini desteklemiyor.
         </video>
               </div>
@@ -354,6 +377,14 @@ a.btn-link:hover {
                 <img style="object-fit: contain;" src="https://origami.me/wp-content/uploads/2026/02/origami-frog-diagram-step-5.png" alt="" onerror="this.style.display='none'">
                 </div>
                 <h3 style="text-align: center;">Adım 5: Sol alt kenarı yatay merkez çizgisine katlayın, sonra açın.</h3>
+            </div>
+
+            <div class="steps origami-image-placeholder">
+                <div style="display: flex; gap: 1px; justify-content: center;">
+                <img style="max-height: 50%; max-width: 50%; object-fit: contain;" src="https://origami.me/wp-content/uploads/2026/02/origami-frog-paper-fold-step-6.gif" alt="" onerror="this.style.display='none'">
+                <img style="max-height: 50%; max-width: 50%; object-fit: contain;" src="https://origami.me/wp-content/uploads/2026/02/origami-frog-diagram-step-6.png" alt="" onerror="this.style.display='none'">
+                </div>
+                <h3 style="text-align: center;">Adım 6: Kağıdı ters çevirin.</h3>
             </div>
     
                     
